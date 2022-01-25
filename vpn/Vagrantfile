@@ -89,7 +89,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     end
 	
     ubuntu18.vm.provision "shell", inline: <<-SHELL    
-    sudo -- sh -c "echo '10.32.4.129 harbor.eastnets.com' >> /etc/hosts"
+    sudo -- sh -c "echo '10.32.4.169 harbor.eastnets.com' >> /etc/hosts"
     docker run -v /opt/eastnets:/opt/eastnets --ulimit nofile=50000:50000 -p 1433:1433 -p 8080:8080 -p 8483:8483 -p 8999:8999 -d harbor.eastnets.com/profiling/profiling_radar360_kyc:latest
     SHELL
 
